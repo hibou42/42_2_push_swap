@@ -1,6 +1,6 @@
 #***** Name *****#
 
-NAME			=		template
+NAME			=		push_swap
 
 #***** Makeflags *****#
 
@@ -8,7 +8,9 @@ MAKEFLAGS += --no-print-directory
 
 #***** Sources / Objs *****#
 
-SRC				=		z_test.c \
+SRC				=		push_swap.c \
+						init/struct.c \
+						init/args.c \
 
 OBJS			=		$(SRC:.c=.o)
 
@@ -29,12 +31,11 @@ ENDCOLOR		=		\033[0m
 #***** Textes *****#
 
 START_TXT		=		echo "$(GREEN)Compilation of $(NAME) just started$(ENDCOLOR)"
-TEST_TXT		=		echo "$(GREY)Running some test$(ENDCOLOR)\n"
 END_COMP_TXT	=		echo "$(GREEN)Compilation is done$(ENDCOLOR)"
 CLEAN_TXT		=		echo "$(RED)Deleting objects$(ENDCOLOR)"
 FCLEAN_TXT		=		echo "$(RED)Deleting program$(ENDCOLOR)"
 CHARG_LINE_TXT	=		echo "$(BG_GREEN)    $(ENDCOLOR)\c"
-BS_N_TXT			=		echo "\n"
+BS_N_TXT		=		echo "\n"
 
 #***** Flags *****#
 
@@ -74,12 +75,6 @@ l :			${OBJS}
 			${MLIBFT} all
 			${CC} ${L} -o ${NAME} ${OBJS} ${LIBFT}
 			@$(END_COMP_TXT)
-
-test: 		all
-			@${CC} ${CFLAGS} ${OBJS} libft/libft.a
-			@$(TEST_TXT)
-			@./a.out
-			@rm -f ./a.out
 
 #***** Clean *****#
 

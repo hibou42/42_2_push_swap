@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   z_test.c                                           :+:      :+:    :+:   */
+/*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 15:33:20 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/20 13:41:18 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/01/20 15:08:44 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/01/20 16:26:01 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+#include "../push_swap.h"
 
-int	main(void)
+void	init_struct(t_data *data, t_chain *list)
 {
-	char	*str;
-	int		fd;
-	int		i;
-
-	i = 0;
-	printf("GNL tester\n");
-	fd = open("./ascii_art/hibou_txt", O_RDONLY);
-	while (i < 8)
-	{
-		str = get_next_line(fd);
-		printf("%s", str);
-		i++;
-	}
-	printf("\n\nft_printf tester\n\n");
-	ft_printf("Coucou hibou \nThe GNL tester printf a total of %d lines\n", i);
-	return (0);
+	data->x = 0;
+	data->y = 0;
+	list->number = 0;
+	list->index = 0;
+	list->previous = NULL;
+	list->next = NULL;
 }
