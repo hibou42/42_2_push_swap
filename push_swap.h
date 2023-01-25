@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 13:13:41 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:19:47 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ typedef struct s_data
 {
 	int		x;
 	int		y;
-	
 }		t_data;
 
 typedef struct s_chain
@@ -28,10 +27,11 @@ typedef struct s_chain
 	int				index;
 	struct s_chain	*previous;
 	struct s_chain	*next;
-	
 }		t_chain;
 
-void	init_struct(t_data *data, t_chain *list);
-int		check_args(int argc, char **argv, t_chain *chain);
+void	init_struct(t_data *data, t_chain *chain);
+int		check_args(int argc, char **argv);
+t_chain	*lst_new_block(int content);
+void	lst_add_back(t_chain **lst, t_chain *new);
 
 #endif

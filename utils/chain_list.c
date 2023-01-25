@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   chain_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 15:08:44 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 14:50:06 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/01/25 14:15:05 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/01/25 14:49:56 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_struct(t_data *data, t_chain *chain)
+t_chain	*lst_new_block(int content)
 {
-	(void)chain;
-	data->x = 0;
-	data->y = 0;
-//	chain->number = 0;
-//	chain->index = 0;
-//	chain->previous = NULL;
-//	chain->next = NULL;
+	t_chain	*dest;
+
+	dest = (t_chain *)malloc(sizeof(t_chain));
+	if (! dest)
+		return (NULL);
+	dest->number = content;
+	dest->next = NULL;
+	return (dest);
+}
+
+void	lst_add_back(t_chain **lst, t_chain *new)
+{
+	t_chain	*tmp;
+
+	tmp = *lst;
+	if (! tmp)
+		*lst = new;
+	else
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new;
+	}
 }

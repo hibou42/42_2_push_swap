@@ -6,45 +6,64 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 13:53:54 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:29:45 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	add_in_struct(char	*str, )
+int	check_str(char *str)
 {
-	
+	int	res;
+	int	i;
+
+	res = 0;
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i] < '0' || str[i] > '9'))
+			if (str[i] != '-')
+				res ++;
+		i++;
+	}
+	return (res);
 }
 
 int	multi_arg(int argc, char **argv)
 {
-	int		res = 0;
+	int	res;
+	int	i;
 
-	(void)argc;
+	res = 0;
+	i = 1;
 	(void)argv;
-	printf("multi\n");
+	while (i < argc)
+	{
+		res += check_str(argv[i]);
+		i++;
+	}
 	return (res);
 }
 
-int	solo_arg(char **argv, t_chain *chain)
+int	solo_arg(char **argv)
 {
-	int		res = 0;
+	int		res;
 	int		i;
 	char	**tmp;
 
+	res = 0;
 	tmp = ft_split(argv[1], ' ');
 	i = 0;
 	while (tmp[i])
 	{
-		add_in_struct(ft_atoi(tmp[i]));
+		res += check_str(tmp[i]);
 		free(tmp[i]);
 		i++;
 	}
 	return (res);
 }
 
-int	check_args(int argc, char **argv, t_chain *chain)
+int	check_args(int argc, char **argv)
 {
 	int	res;
 
@@ -55,7 +74,7 @@ int	check_args(int argc, char **argv, t_chain *chain)
 	}
 	else if (argc == 2)
 	{
-		res = solo_arg(argv, chain);
+		res = solo_arg(argv);
 	}
 	else
 	{
