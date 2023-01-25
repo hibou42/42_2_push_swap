@@ -19,11 +19,17 @@ int	check_str(char *str)
 
 	res = 0;
 	i = 0;
+	if (str[0] == '-')
+	{
+		i = 1;
+		if (!str[1])
+			res++;
+	
+	}
 	while (str[i])
 	{
 		if ((str[i] < '0' || str[i] > '9'))
-			if (str[i] != '-')
-				res ++;
+			res ++;
 		i++;
 	}
 	return (res);
