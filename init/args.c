@@ -6,11 +6,16 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/20 16:29:13 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:53:54 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	add_in_struct(char	*str, )
+{
+	
+}
 
 int	multi_arg(int argc, char **argv)
 {
@@ -22,17 +27,24 @@ int	multi_arg(int argc, char **argv)
 	return (res);
 }
 
-int	solo_arg(char **argv)
+int	solo_arg(char **argv, t_chain *chain)
 {
 	int		res = 0;
+	int		i;
 	char	**tmp;
 
 	tmp = ft_split(argv[1], ' ');
-	printf("tmp = %s %s %s\n", tmp[0], tmp[1], tmp[2]);
+	i = 0;
+	while (tmp[i])
+	{
+		add_in_struct(ft_atoi(tmp[i]));
+		free(tmp[i]);
+		i++;
+	}
 	return (res);
 }
 
-int	check_args(int argc, char **argv)
+int	check_args(int argc, char **argv, t_chain *chain)
 {
 	int	res;
 
@@ -43,7 +55,7 @@ int	check_args(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		res = solo_arg(argv);
+		res = solo_arg(argv, chain);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/20 16:25:54 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:14:43 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 
 	printf("Welcome to %s\n", argv[0]);
 	init_struct(&data, &chain);
-	check = check_args(argc, argv);
+	check = check_args(argc, argv, &chain);
 	if (check != 0)
 		return (0);
 	return (0);
