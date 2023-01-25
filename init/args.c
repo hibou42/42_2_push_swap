@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 15:29:45 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:19:56 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	multi_arg(int argc, char **argv)
 
 	res = 0;
 	i = 1;
-	(void)argv;
 	while (i < argc)
 	{
 		res += check_str(argv[i]);
