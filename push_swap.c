@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 15:34:16 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:06:06 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc > 1)
 		check = check_args(argc, argv);
-	else 
+	else
 	{
 		ft_printf("Error\nIl n'y a pas d'arguments\n");
 		return (0);

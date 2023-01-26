@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/25 16:19:56 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:08:03 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	check_str(char *str)
 		i = 1;
 		if (!str[1])
 			res++;
-	
 	}
 	while (str[i])
 	{
