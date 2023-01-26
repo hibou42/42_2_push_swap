@@ -16,7 +16,13 @@ int	main(int argc, char **argv)
 {
 	int		check;
 
-	check = check_args(argc, argv);
+	if (argc > 1)
+		check = check_args(argc, argv);
+	else 
+	{
+		ft_printf("Error\nIl n'y a pas d'arguments\n");
+		return (0);
+	}
 	if (check != 0)
 	{
 		ft_printf("Error\nIl y a une erreur dans les arguments\n");
