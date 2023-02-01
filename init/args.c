@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/26 16:08:03 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:38:37 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_str(char *str)
 	return (res);
 }
 
-int	multi_arg(int argc, char **argv)
+int	multi_arg(int argc, char **argv, t_data *data)
 {
 	int	res;
 	int	i;
@@ -46,10 +46,11 @@ int	multi_arg(int argc, char **argv)
 		res += check_str(argv[i]);
 		i++;
 	}
+	data->multi = 1;
 	return (res);
 }
 
-int	solo_arg(char **argv)
+int	solo_arg(char **argv, t_data *data)
 {
 	int		res;
 	int		i;
@@ -64,25 +65,21 @@ int	solo_arg(char **argv)
 		free(tmp[i]);
 		i++;
 	}
+	data->solo = 1;
 	return (res);
 }
 
-int	check_args(int argc, char **argv)
+int	check_args(int argc, char **argv, t_data *data)
 {
 	int	res;
 
-	if (argc == 1)
+	if (argc == 2)
 	{
-		ft_printf("Error\nIl n'y a pas d'arguments\n");
-		return (1);
-	}
-	else if (argc == 2)
-	{
-		res = solo_arg(argv);
+		res = solo_arg(argv, data);
 	}
 	else
 	{
-		res = multi_arg(argc, argv);
+		res = multi_arg(argc, argv, data);
 	}
 	return (res);
 }
