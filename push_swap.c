@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+void	test_print(t_data *data)
+{
+	t_list	*tmp;
+
+	tmp = data->p_a;
+	while(tmp->next != NULL)
+	{
+		printf("%ld\n", (long int)tmp->content);
+		tmp = tmp->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int		check;
@@ -32,7 +44,8 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf("done\n");
+		init_list(argv, &data);
+		test_print(&data);
 		return (0);
 	}
 }

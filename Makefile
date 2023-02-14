@@ -11,6 +11,7 @@ MAKEFLAGS += --no-print-directory
 SRC				=		push_swap.c \
 						init/args.c \
 						init/struct.c \
+						init/chain_list.c \
 
 OBJS			=		$(SRC:.c=.o)
 

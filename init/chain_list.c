@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   chain_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "./libft/libft.h"
-
-typedef struct s_data
+void init_list(char **argv, t_data *data)
 {
-	int		solo;
-	int		multi;
-	t_list	*p_a;
-	t_list	*p_b;
-}		t_data;
-
-int		check_args(int argc, char **argv, t_data *data);
-void	init_struct(t_data *data);
-void	init_list(char **argv, t_data *data);
-
-#endif
+	int		i;
+	char	**tmp;
+	
+	if (data->solo == 1)
+		tmp = ft_split(argv[1], ' ');
+	else if (data->multi == 1)
+		tmp = argv;
+	i = 1;
+	if (!data->p_a)
+	{
+		data->p_a = ft_lstnew(tmp[i]);
+		i++;
+	}
+	while (tmp[i])
+	{
+		ft_lstadd_back(&data->p_a, ft_lstnew(tmp[i]));
+		i++;
+	}
+}
