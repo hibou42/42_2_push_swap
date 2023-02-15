@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chain_list.c                                       :+:      :+:    :+:   */
+/*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/03 13:10:27 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/02/01 16:06:39 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/02/01 16:39:02 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void init_list(char **argv, t_data *data)
+t_c_list	*ft_c_lstnew(int content)
 {
-	int		i;
-	char	**tmp;
-	
-	if (data->solo == 1)
+	t_c_list	*dest;
+
+	dest = (t_c_list *)malloc(sizeof(t_c_list));
+	if (! dest)
+		return (NULL);
+	dest->content = content;
+	dest->next = NULL;
+	return (dest);
+}
+
+void	ft_c_lstadd_back(t_c_list **lst, t_c_list *new)
+{
+	t_c_list	*tmp;
+
+	tmp = *lst;
+	if (! tmp)
+		*lst = new;
+	else
 	{
-		tmp = ft_split(argv[1], ' ');
-		i = 0;
-	}
-	else if (data->multi == 1)
-	{
-		tmp = argv;
-		i = 1;
-	}
-	data->p_a = ft_c_lstnew(ft_atoi(tmp[i]));
-	i++;
-	while (tmp[i])
-	{
-		ft_c_lstadd_back(&data->p_a, ft_c_lstnew(ft_atoi(tmp[i])));
-		i++;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
 }

@@ -14,14 +14,26 @@
 
 void	test_print(t_data *data)
 {
-	t_list	*tmp;
+	t_c_list	*tmp;
 
+	printf("Pile A\n");
 	tmp = data->p_a;
 	while(tmp->next != NULL)
 	{
-		printf("%ld\n", (long int)tmp->content);
+		printf("%d\n", tmp->content);
 		tmp = tmp->next;
 	}
+	printf("%d\n", tmp->content);
+	/*	
+	printf("Pile B\n");
+	tmp = data->p_b;
+	while(tmp->next != NULL)
+	{
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("%d\n", tmp->content);
+	*/
 }
 
 int	main(int argc, char **argv)
