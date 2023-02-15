@@ -18,22 +18,19 @@ void	test_print(t_data *data)
 
 	printf("Pile A\n");
 	tmp = data->p_a;
-	while(tmp->next != NULL)
+	while(tmp)
 	{
 		printf("%d\n", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->content);
-	/*	
+	
 	printf("Pile B\n");
 	tmp = data->p_b;
-	while(tmp->next != NULL)
+	while(tmp)
 	{
 		printf("%d\n", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->content);
-	*/
 }
 
 int	main(int argc, char **argv)

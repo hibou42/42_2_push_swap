@@ -16,4 +16,6 @@ void	init_struct(t_data *data)
 {
 	data->solo = 0;
 	data->multi = 0;
+	data->p_a = NULL;
+	data->p_b = NULL;
 }
