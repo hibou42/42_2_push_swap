@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/01 16:41:56 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:24:25 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ void	test_print(t_data *data)
 
 	printf("Pile A\n");
 	tmp = data->p_a;
-	while(tmp)
+	while (tmp)
 	{
 		printf("%d\n", tmp->content);
 		tmp = tmp->next;
 	}
-	
 	printf("Pile B\n");
 	tmp = data->p_b;
-	while(tmp)
+	while (tmp)
 	{
 		printf("%d\n", tmp->content);
 		tmp = tmp->next;
