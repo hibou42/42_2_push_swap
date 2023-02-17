@@ -13,6 +13,10 @@ SRC				=		push_swap.c \
 						init/struct.c \
 						init/chain_list.c \
 						utils/list.c \
+						utils/push.c \
+						utils/swap.c \
+						utils/rotate.c \
+						utils/reverse_rotate.c \
 
 OBJS			=		$(SRC:.c=.o)
 

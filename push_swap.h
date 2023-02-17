@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/03 13:10:27 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:39:51 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ void		init_struct(t_data *data);
 void		init_list(char **argv, t_data *data);
 t_c_list	*ft_c_lstnew(int content);
 void		ft_c_lstadd_back(t_c_list **lst, t_c_list *new);
-void		swap_a(t_data *data);
-void		swap_b(t_data *data);
-void		swap_ab(t_data *data);
-void		push_a(t_data *data);
-void		push_b(t_data *data);
-void		rotate_a(t_data *data);
-void		rotate_b(t_data *data);
-void		rotate_ab(t_data *data);
-void		rev_rotate_a(t_data *data);
-void		rev_rotate_b(t_data *data);
-void		rev_rotate_ab(t_data *data);
+void		swap_a(t_data *data, int print);
+void		swap_b(t_data *data, int print);
+void		swap_ab(t_data *data, int print);
+void		push_a(t_data *data, int print);
+void		push_b(t_data *data, int print);
+void		rotate_a(t_data *data, int print);
+void		rotate_b(t_data *data, int print);
+void		rotate_ab(t_data *data, int print);
+void		rev_rotate_a(t_data *data, int print);
+void		rev_rotate_b(t_data *data, int print);
+void		rev_rotate_ab(t_data *data, int print);
 
 #endif

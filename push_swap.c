@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/15 17:24:25 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:35:53 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	main(int argc, char **argv)
 	else
 	{
 		init_list(argv, &data);
+		test_print(&data);
+		swap_a(&data, 1);
 		test_print(&data);
 		return (0);
 	}
