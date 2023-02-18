@@ -60,10 +60,11 @@ int	main(int argc, char **argv)
 		test_print(&data);
 		rotate_a(&data, 1);
 		rotate_b(&data, 1);
-		rotate_ab(&data, 1);
 		test_print(&data);
 		rev_rotate_a(&data, 1);
 		rev_rotate_b(&data, 1);
+		test_print(&data);
+		rotate_ab(&data, 1);
 		rev_rotate_ab(&data, 1);
 		test_print(&data);
 		return (0);
