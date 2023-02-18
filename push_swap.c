@@ -54,7 +54,12 @@ int	main(int argc, char **argv)
 	{
 		init_list(argv, &data);
 		test_print(&data);
-		swap_a(&data, 1);
+		rotate_a(&data, 1);
+		test_print(&data);
+		push_b(&data, 1);
+		push_b(&data, 1);
+		test_print(&data);
+		rotate_b(&data, 1);
 		test_print(&data);
 		return (0);
 	}

@@ -14,21 +14,50 @@
 
 void	rotate_a(t_data *data, int print)
 {
-	(void)data;
+	struct s_c_list	*tmp_first;
+	struct s_c_list	*tmp;
+
+	if (data->p_a)
+	{
+		tmp_first = data->p_a;
+		data->p_a = data->p_a->next;
+		tmp = data->p_a;
+		while (tmp->next)
+		{
+			tmp = tmp->next;
+		}
+		tmp->next = tmp_first;
+		tmp_first->next = NULL;
+	}
 	if (print)
 		ft_printf("ra\n");
 }
 
 void	rotate_b(t_data *data, int print)
 {
-	(void)data;
+	struct s_c_list	*tmp_first;
+	struct s_c_list	*tmp;
+
+	if (data->p_b)
+	{
+		tmp_first = data->p_b;
+		data->p_b = data->p_b->next;
+		tmp = data->p_b;
+		while (tmp->next)
+		{
+			tmp = tmp->next;
+		}
+		tmp->next = tmp_first;
+		tmp_first->next = NULL;
+	}
 	if (print)
 		ft_printf("rb\n");
 }
 
 void	rotate_ab(t_data *data, int print)
 {
-	(void)data;
+	rotate_a(data, 0);
+	rotate_b(data, 0);
 	if (print)
 		ft_printf("rr\n");
 }
