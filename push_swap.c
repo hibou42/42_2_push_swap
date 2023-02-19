@@ -70,7 +70,19 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 }
+
 /*
+NEXT TO DO 
+add nb of number in data
+Hardcode 3
+Hardcode 5
+add index in chainlist
+RADDIX
+*/
+
+/*
+~~~ INSTRUCTIONS FOR PUSH_SWAP ~~~
+
 sa (swap a) : Intervertit les 2 premiers éléments au sommet de la pile a.
 Ne fait rien s’il n’y en a qu’un ou aucun.
 

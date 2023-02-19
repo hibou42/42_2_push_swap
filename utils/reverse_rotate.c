@@ -40,7 +40,7 @@ void	rev_rotate_b(t_data *data, int print)
 	{
 		tmp_last = tmp;
 		tmp = tmp->next;
-	}
+	}f
 	tmp_last->next = NULL;
 	tmp->next = data->p_b;
 	data->p_b = tmp;
