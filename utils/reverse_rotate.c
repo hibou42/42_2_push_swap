@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:39 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/17 15:32:12 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:03:59 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rev_rotate_a(t_data *data, int print)
 	struct s_c_list	*tmp;
 
 	tmp = data->p_a;
-	while(tmp->next)
+	while (tmp->next)
 	{
 		tmp_last = tmp;
 		tmp = tmp->next;
@@ -36,11 +36,11 @@ void	rev_rotate_b(t_data *data, int print)
 	struct s_c_list	*tmp;
 
 	tmp = data->p_b;
-	while(tmp->next)
+	while (tmp->next)
 	{
 		tmp_last = tmp;
 		tmp = tmp->next;
-	}f
+	}
 	tmp_last->next = NULL;
 	tmp->next = data->p_b;
 	data->p_b = tmp;

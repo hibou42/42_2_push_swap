@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chain_list.c                                       :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 14:40:05 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/02/21 15:15:43 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/02/21 16:19:28 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_list(char **argv, t_data *data)
+void	error(t_data *data, int num_error)
 {
-	int		i;
-	char	**tmp;
-
-	i = 0;
-	if (data->solo == 1)
-		tmp = ft_split(argv[1], ' ');
-	else
-	{
-		tmp = argv;
-		i = 1;
-	}
-	data->p_a = ft_c_lstnew(ft_atoi(tmp[i]));
-	i++;
-	while (tmp[i])
-	{
-		ft_c_lstadd_back(&data->p_a, ft_c_lstnew(ft_atoi(tmp[i])));
-		i++;
-	}
-	data->nb_nbr = i - 1;
+	write(2, "Error\n", 6);
+	if (num_error == 1)
+		write(2, "Il n'y a pas d'argument\n", 24);
+	if (num_error == 2)
+		write(2, "Il y a une erreur dans les arguments\n", 37);
+	if (num_error == 3)
+		write(2, "Il y a un doublon\n", 18);
+	free_and_exit(data, 1);
 }

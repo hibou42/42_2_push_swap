@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/17 13:39:51 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:19:35 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_c_list
 {
 	int				content;
+	int				index;
 	struct s_c_list	*next;
 }					t_c_list;
 
@@ -25,13 +26,19 @@ typedef struct s_data
 {
 	int			solo;
 	int			multi;
+	int			nb_nbr;
 	t_c_list	*p_a;
 	t_c_list	*p_b;
+	t_c_list	*bigest;
 }					t_data;
 
-int			check_args(int argc, char **argv, t_data *data);
+void		error(t_data *data, int num_error);
+void		free_and_exit(t_data *data, int force_exit);
+void		check_args(int argc, char **argv, t_data *data);
+void		check_doublon(t_data *data);
 void		init_struct(t_data *data);
 void		init_list(char **argv, t_data *data);
+void		init_index(t_data *data);
 t_c_list	*ft_c_lstnew(int content);
 void		ft_c_lstadd_back(t_c_list **lst, t_c_list *new);
 void		swap_a(t_data *data, int print);

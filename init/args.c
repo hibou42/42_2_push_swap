@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/01 16:38:37 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:24:44 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ int	solo_arg(char **argv, t_data *data)
 	return (res);
 }
 
-int	check_args(int argc, char **argv, t_data *data)
+void	check_args(int argc, char **argv, t_data *data)
 {
 	int	res;
 
+	if (argc == 1)
+		error(data, 1);
 	if (argc == 2)
 	{
 		res = solo_arg(argv, data);
@@ -81,5 +83,6 @@ int	check_args(int argc, char **argv, t_data *data)
 	{
 		res = multi_arg(argc, argv, data);
 	}
-	return (res);
+	if (res != 0)
+		error(data, 2);
 }

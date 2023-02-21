@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chain_list.c                                       :+:      :+:    :+:   */
+/*   free_and_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 14:40:05 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/02/21 15:06:42 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/02/21 16:18:40 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_list(char **argv, t_data *data)
+void	free_and_exit(t_data *data, int force_exit)
 {
-	int		i;
-	char	**tmp;
+	struct s_c_list	*tmp;
+	struct s_c_list	*tmp_next;
 
-	i = 0;
-	if (data->solo == 1)
-		tmp = ft_split(argv[1], ' ');
-	else
+	if (data->p_a)
 	{
-		tmp = argv;
-		i = 1;
+		tmp = data->p_a;
+		while (tmp)
+		{
+			tmp_next = tmp->next;
+			free(tmp);
+			tmp = tmp_next;
+		}
 	}
-	data->p_a = ft_c_lstnew(ft_atoi(tmp[i]));
-	i++;
-	while (tmp[i])
+	if (data->p_b)
 	{
-		ft_c_lstadd_back(&data->p_a, ft_c_lstnew(ft_atoi(tmp[i])));
-		i++;
+		tmp = data->p_b;
+		while (tmp)
+		{
+			tmp_next = tmp->next;
+			free(tmp);
+			tmp = tmp_next;
+		}
 	}
-	data->nb_nbr = i - 1;
+	if (force_exit)
+		exit(1);
 }

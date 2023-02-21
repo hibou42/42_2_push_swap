@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/17 15:35:53 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:17:47 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,51 +34,17 @@ void	test_print(t_data *data)
 
 int	main(int argc, char **argv)
 {
-	int		check;
 	t_data	data;
 
 	init_struct(&data);
-	if (argc > 1)
-		check = check_args(argc, argv, &data);
-	else
-	{
-		ft_printf("Error\nIl n'y a pas d'arguments\n");
-		return (0);
-	}
-	if (check != 0)
-	{
-		ft_printf("Error\nIl y a une erreur dans les arguments\n");
-		return (0);
-	}
-	else
-	{
-		init_list(argv, &data);
-		test_print(&data);
-		push_b(&data, 1);
-		push_b(&data, 1);
-		push_b(&data, 1);
-		test_print(&data);
-		rotate_a(&data, 1);
-		rotate_b(&data, 1);
-		test_print(&data);
-		rev_rotate_a(&data, 1);
-		rev_rotate_b(&data, 1);
-		test_print(&data);
-		rotate_ab(&data, 1);
-		rev_rotate_ab(&data, 1);
-		test_print(&data);
-		return (0);
-	}
+	check_args(argc, argv, &data);
+	init_list(argv, &data);
+	check_doublon(&data);
+	init_index(&data);
+	test_print(&data);
+	free_and_exit(&data, 0);
+	return (0);
 }
-
-/*
-NEXT TO DO 
-add nb of number in data
-Hardcode 3
-Hardcode 5
-add index in chainlist
-RADDIX
-*/
 
 /*
 ~~~ INSTRUCTIONS FOR PUSH_SWAP ~~~

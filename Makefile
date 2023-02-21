@@ -12,11 +12,15 @@ SRC				=		push_swap.c \
 						init/args.c \
 						init/struct.c \
 						init/chain_list.c \
+						init/index.c \
+						init/doublon.c \
+						errors/errors.c \
 						utils/list.c \
 						utils/push.c \
 						utils/swap.c \
 						utils/rotate.c \
 						utils/reverse_rotate.c \
+						utils/free_and_exit.c \
 
 OBJS			=		$(SRC:.c=.o)
 

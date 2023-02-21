@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chain_list.c                                       :+:      :+:    :+:   */
+/*   doublon.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 14:40:05 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/02/21 15:28:51 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/02/21 15:33:29 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_list(char **argv, t_data *data)
+void	check_doublon(t_data *data)
 {
-	int		i;
-	char	**tmp;
+	struct s_c_list	*tmp_check;
+	struct s_c_list	*tmp;
 
-	i = 0;
-	if (data->solo == 1)
-		tmp = ft_split(argv[1], ' ');
-	else
+	tmp_check = data->p_a;
+	while (tmp_check)
 	{
-		tmp = argv;
-		i = 1;
+		tmp = data->p_a;
+		while (tmp)
+		{
+			if (tmp->content == tmp_check->content)
+			{
+				if (tmp != tmp_check)
+					error(data, 3);
+			}
+			tmp = tmp->next;
+		}
+		tmp_check = tmp_check->next;
 	}
-	data->p_a = ft_c_lstnew(ft_atoi(tmp[i]));
-	i++;
-	while (tmp[i])
-	{
-		ft_c_lstadd_back(&data->p_a, ft_c_lstnew(ft_atoi(tmp[i])));
-		i++;
-	}
-	data->nb_nbr = i - 1;
 }
