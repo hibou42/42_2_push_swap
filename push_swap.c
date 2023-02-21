@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 16:17:47 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:20:53 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	test_print(t_data *data)
 	tmp = data->p_a;
 	while (tmp)
 	{
-		printf("%d\n", tmp->content);
+		printf("%d / index = %d\n", tmp->content, tmp->index);
 		tmp = tmp->next;
 	}
 	printf("Pile B\n");
 	tmp = data->p_b;
 	while (tmp)
 	{
-		printf("%d\n", tmp->content);
+		printf("%d / index = %d\n", tmp->content, tmp->index);
 		tmp = tmp->next;
 	}
 }
@@ -41,6 +41,8 @@ int	main(int argc, char **argv)
 	init_list(argv, &data);
 	check_doublon(&data);
 	init_index(&data);
+	test_print(&data);
+	sorting(&data);
 	test_print(&data);
 	free_and_exit(&data, 0);
 	return (0);
