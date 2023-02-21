@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:39 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/17 15:53:29 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:54:09 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 void	swap_a(t_data *data, int print)
 {
 	struct s_c_list	*tmp_struct;
-	int				tmp_content;
+	struct s_c_list	*tmp_2;
+	struct s_c_list	*tmp_3;
 
 	if (data->p_a && data->p_a->next != NULL)
 	{
-		tmp_content = data->p_a->content;
-		tmp_struct = data->p_a->next;
-		data->p_a->content = tmp_struct->content;
-		tmp_struct->content = tmp_content;
+		tmp_struct = data->p_a;
+		tmp_2 = data->p_a->next;
+		tmp_3 = tmp_2->next;
+		data->p_a = tmp_2;
+		data->p_a->next = tmp_struct;
+		tmp_struct->next = tmp_3;
 	}
 	if (print)
 		ft_printf("sa\n");
@@ -31,14 +34,17 @@ void	swap_a(t_data *data, int print)
 void	swap_b(t_data *data, int print)
 {
 	struct s_c_list	*tmp_struct;
-	int				tmp_content;
+	struct s_c_list	*tmp_2;
+	struct s_c_list	*tmp_3;
 
 	if (data->p_b && data->p_b->next != NULL)
 	{
-		tmp_content = data->p_b->content;
-		tmp_struct = data->p_b->next;
-		data->p_b->content = tmp_struct->content;
-		tmp_struct->content = tmp_content;
+		tmp_struct = data->p_b;
+		tmp_2 = data->p_b->next;
+		tmp_3 = tmp_2->next;
+		data->p_b = tmp_2;
+		data->p_b->next = tmp_struct;
+		tmp_struct->next = tmp_3;
 	}
 	if (print)
 		ft_printf("sb\n");

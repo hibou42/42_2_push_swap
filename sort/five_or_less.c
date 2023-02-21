@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:03:13 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 17:21:48 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:57:20 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,28 @@ void	only_4(t_data *data)
 
 void	only_3(t_data *data)
 {
-	(void)data;
+	if (data->p_a->index == 1)
+	{
+		push_b(data, 1);
+		if (data->p_a->index == 3)
+			rotate_a(data, 1);
+		push_a(data, 1);
+	}
+	if (data->p_a->index == 2)
+	{
+		swap_a(data, 1);
+		if (data->p_a->index == 3)
+		{
+			rotate_a(data, 1);
+			swap_a(data, 1);
+		}
+	}
+	if (data->p_a->index == 3)
+	{
+		rotate_a(data, 1);
+		if (data->p_a->index == 2)
+			swap_a(data, 1);
+	}
 }
 
 void	only_2(t_data *data)
