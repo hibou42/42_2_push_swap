@@ -10,7 +10,6 @@ MAKEFLAGS += --no-print-directory
 
 SRC				=		push_swap.c \
 						init/args.c \
-						init/struct.c \
 						init/chain_list.c \
 						init/index.c \
 						init/doublon.c \
@@ -88,6 +87,9 @@ l :			${OBJS}
 			${MLIBFT} all
 			${CC} ${L} -o ${NAME} ${OBJS} ${LIBFT}
 			@$(END_COMP_TXT)
+
+visio :		all
+			python3 push_swap_visualizer.py
 
 #***** Clean *****#
 

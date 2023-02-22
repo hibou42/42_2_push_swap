@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	free_and_exit(t_data *data, int force_exit)
+void	free_and_exit(t_data *data, char force_exit)
 {
 	struct s_c_list	*tmp;
 	struct s_c_list	*tmp_next;

@@ -14,42 +14,36 @@
 
 void	rotate_a(t_data *data, int print)
 {
-	struct s_c_list	*tmp_first;
-	struct s_c_list	*tmp;
+	struct s_c_list	*tmp_1;
+	struct s_c_list	*tmp_2;
+	struct s_c_list	*tmp_last;
 
-	if (data->p_a)
-	{
-		tmp_first = data->p_a;
-		data->p_a = data->p_a->next;
-		tmp = data->p_a;
-		while (tmp->next)
-		{
-			tmp = tmp->next;
-		}
-		tmp->next = tmp_first;
-		tmp_first->next = NULL;
-	}
+	tmp_1 = data->p_a;
+	tmp_2 = data->p_a->next;
+	tmp_last = data->p_a;
+	while (tmp_last->next)
+		tmp_last = tmp_last->next;
+	tmp_last->next = tmp_1;
+	tmp_1->next = NULL;
+	data->p_a = tmp_2;
 	if (print)
 		ft_printf("ra\n");
 }
 
 void	rotate_b(t_data *data, int print)
 {
-	struct s_c_list	*tmp_first;
-	struct s_c_list	*tmp;
+	struct s_c_list	*tmp_1;
+	struct s_c_list	*tmp_2;
+	struct s_c_list	*tmp_last;
 
-	if (data->p_b)
-	{
-		tmp_first = data->p_b;
-		data->p_b = data->p_b->next;
-		tmp = data->p_b;
-		while (tmp->next)
-		{
-			tmp = tmp->next;
-		}
-		tmp->next = tmp_first;
-		tmp_first->next = NULL;
-	}
+	tmp_1 = data->p_b;
+	tmp_2 = data->p_b->next;
+	tmp_last = data->p_b;
+	while (tmp_last->next)
+		tmp_last = tmp_last->next;
+	tmp_last->next = tmp_1;
+	tmp_1->next = NULL;
+	data->p_b = tmp_2;
 	if (print)
 		ft_printf("rb\n");
 }

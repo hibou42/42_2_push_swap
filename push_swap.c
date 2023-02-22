@@ -36,14 +36,15 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	init_struct(&data);
+	data = (t_data){};
 	check_args(argc, argv, &data);
 	init_list(argv, &data);
 	check_doublon(&data);
 	init_index(&data);
-	test_print(&data);
+	//test_print(&data);
 	sorting(&data);
-	test_print(&data);
+	//rotate_a(&data, 1);
+	//test_print(&data);
 	free_and_exit(&data, 0);
 	return (0);
 }

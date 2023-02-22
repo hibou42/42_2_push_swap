@@ -12,7 +12,32 @@
 
 #include "../push_swap.h"
 
-void	raddix(t_data *data)
+void	find_max_shift(t_data *data)
 {
-	(void)data;
+	while ((data->nb_nbr >> data->max_shift) != 0)
+	{
+		data->max_shift++;
+	}
+}
+
+void	raddix(t_data *data, int shift)
+{
+	int	len;
+
+	if (shift >= data->max_shift)
+		return ;
+	len = 0;
+	while (len < data->nb_nbr)
+	{
+		if ((data->p_a->index >> shift) &1)
+			rotate_a(data, 1);
+		else
+			push_b(data, 1);
+		len ++;
+	}
+	while (data->p_b)
+	{
+		push_a(data, 1);
+	}
+	raddix(data, shift + 1);
 }

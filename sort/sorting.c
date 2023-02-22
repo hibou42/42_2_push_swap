@@ -17,5 +17,8 @@ void	sorting(t_data *data)
 	if (data->nb_nbr <= 5)
 		five_or_less(data);
 	else
-		raddix(data);
+	{
+		find_max_shift(data);
+		raddix(data, 0);
+	}
 }
