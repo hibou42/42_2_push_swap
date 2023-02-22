@@ -88,7 +88,7 @@ l :			${OBJS}
 			${CC} ${L} -o ${NAME} ${OBJS} ${LIBFT}
 			@$(END_COMP_TXT)
 
-visio :		all
+gui :		all
 			python3 push_swap_visualizer.py
 
 #***** Clean *****#

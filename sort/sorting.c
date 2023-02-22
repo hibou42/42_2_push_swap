@@ -14,7 +14,7 @@
 
 void	sorting(t_data *data)
 {
-	if (data->nb_nbr <= 5)
+	if (data->nb_nbr <= 3)
 		five_or_less(data);
 	else
 	{
