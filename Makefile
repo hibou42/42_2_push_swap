@@ -98,9 +98,6 @@ gui :		all
 			@$(GUI)
 			@make fclean
 
-checker :	all
-			ARG="4 67 3"; ./push_swap $ARG | ./checker_Mac $ARG
-
 #***** Clean *****#
 
 clean:
