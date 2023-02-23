@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 15:24:44 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:38:25 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	solo_arg(char **argv, t_data *data)
 		i++;
 	}
 	data->solo = 1;
+	free(tmp);
 	return (res);
 }
 

@@ -91,9 +91,15 @@ l :			${OBJS}
 			${CC} ${L} -o ${NAME} ${OBJS} ${LIBFT}
 			@$(END_COMP_TXT)
 
+leaks :		all
+			leaks -atExit -- ./${NAME} "42 67 1"
+
 gui :		all
 			@$(GUI)
 			@make fclean
+
+checker :	all
+			ARG="4 67 3"; ./push_swap $ARG | ./checker_Mac $ARG
 
 #***** Clean *****#
 

@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:15:56 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 17:16:39 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:24:43 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	raddix(t_data *data, int shift)
 	len = 0;
 	while (len < data->nb_nbr)
 	{
-		if ((data->p_a->index >> shift) &1)
+		if ((data->p_a->index >> shift) & 1)
 			rotate_a(data, 1);
 		else
 			push_b(data, 1);

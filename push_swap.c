@@ -6,12 +6,14 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 17:20:53 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:44:03 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+test_print(&data);
 void	test_print(t_data *data)
 {
 	t_c_list	*tmp;
@@ -31,6 +33,7 @@ void	test_print(t_data *data)
 		tmp = tmp->next;
 	}
 }
+*/
 
 int	main(int argc, char **argv)
 {
@@ -41,10 +44,7 @@ int	main(int argc, char **argv)
 	init_list(argv, &data);
 	check_doublon(&data);
 	init_index(&data);
-	//test_print(&data);
 	sorting(&data);
-	//rotate_a(&data, 1);
-	//test_print(&data);
 	free_and_exit(&data, 0);
 	return (0);
 }

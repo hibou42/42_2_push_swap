@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 14:40:05 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:41:33 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,16 @@ void	init_list(char **argv, t_data *data)
 		i = 1;
 	}
 	data->p_a = ft_c_lstnew(ft_atoi(tmp[i]));
+	if (data->solo == 1)
+		free(tmp[i]);
 	i++;
 	while (tmp[i])
 	{
 		ft_c_lstadd_back(&data->p_a, ft_c_lstnew(ft_atoi(tmp[i])));
+		if (data->solo == 1)
+			free(tmp[i]);
 		i++;
 	}
+	free(tmp);
 	data->nb_nbr = i - 1;
 }
