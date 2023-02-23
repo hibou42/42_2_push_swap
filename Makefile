@@ -58,9 +58,6 @@ RM				=		rm -f
 
 #***** Visualiser *****#
 GUI				=		python3 pyviz.py `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
-ifeq ($(shell uname), Linux)
-GUI				=		python3 push_swap_visualizer.py
-endif
 
 #***** Compilation *****#
 
