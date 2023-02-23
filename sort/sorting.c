@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:00:03 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 17:11:08 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:00:34 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sorting(t_data *data)
 {
-	if (data->nb_nbr <= 3)
+	if (data->nb_nbr <= 5)
 		five_or_less(data);
 	else
 	{

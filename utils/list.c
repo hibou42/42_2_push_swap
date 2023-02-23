@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:39 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/23 15:52:48 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:33:04 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_c_list	*ft_c_lstnew(int content)
 		return (NULL);
 	dest->content = content;
 	dest->next = NULL;
+	dest->index = 0;
 	return (dest);
 }
 

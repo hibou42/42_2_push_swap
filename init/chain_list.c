@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/23 15:41:33 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:14:07 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	init_list(char **argv, t_data *data)
 			free(tmp[i]);
 		i++;
 	}
-	free(tmp);
-	data->nb_nbr = i - 1;
+	if (data->solo == 1)
+		free(tmp);
+	data->nb_nbr = (i - 1) + data->solo;
 }
