@@ -12,16 +12,38 @@
 
 #include "../push_swap.h"
 
+int	is_max_int(char *str, int neg)
+{
+	long int	num;
+	int 		i;
+
+	num = 0;
+	i = neg;
+	while (str[i] != '\0')
+	{
+		num = num * 10 + (str[i] - '0');
+		if (neg == 0 && num > INT_MAX)
+			return (1); 
+		else if (neg == 1 && -num < INT_MIN)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	check_str(char *str)
 {
 	int	res;
+	int neg;
 	int	i;
 
 	res = 0;
+	neg = 0;
 	i = 0;
 	if (str[0] == '-')
 	{
 		i = 1;
+		neg = 1;
 		if (!str[1])
 			res++;
 	}
@@ -31,7 +53,9 @@ int	check_str(char *str)
 			res ++;
 		i++;
 	}
-	return (res);
+	if (res)
+		return (res);
+	return (is_max_int(str, neg));
 }
 
 int	multi_arg(int argc, char **argv, t_data *data)

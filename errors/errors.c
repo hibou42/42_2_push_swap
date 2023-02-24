@@ -14,12 +14,15 @@
 
 void	error(t_data *data, int num_error)
 {
-	write(2, "Error\n", 6);
+	ft_putstr_fd("Error\n", 2);
+	(void)num_error;
+	/*
 	if (num_error == 1)
-		write(2, "Il n'y a pas d'argument\n", 24);
+		ft_putstr_fd("Il n'y a pas d'argument\n", 2);
 	if (num_error == 2)
-		write(2, "Il y a une erreur dans les arguments\n", 37);
+		ft_putstr_fd("Il y a une erreur dans les arguments\n", 2);
 	if (num_error == 3)
-		write(2, "Il y a un doublon\n", 18);
+		ft_putstr_fd("Il y a un doublon\n", 2);
+	*/
 	free_and_exit(data, 1);
 }

@@ -10,11 +10,11 @@ MAKEFLAGS += --no-print-directory
 
 SRC				=		push_swap.c \
 						init/args.c \
-						init/chain_list.c \
+						init/list.c \
 						init/index.c \
 						init/doublon.c \
 						errors/errors.c \
-						utils/list.c \
+						utils/ft_list.c \
 						utils/push.c \
 						utils/swap.c \
 						utils/rotate.c \
@@ -57,7 +57,7 @@ L				=		$(CFLAGS) -fsanitize=address
 RM				=		rm -f
 
 #***** Visualiser *****#
-GUI				=		python3 pyviz.py `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
+GUI				=		python3 pyviz.py `ruby -e "puts (-50..150).to_a.shuffle.join(' ')"`
 
 #***** Compilation *****#
 

@@ -38,5 +38,5 @@ void	init_list(char **argv, t_data *data)
 	}
 	if (data->solo == 1)
 		free(tmp);
-	data->nb_nbr = (i - 1) + data->solo;
+	data->nb_nbr = i - data->multi;
 }

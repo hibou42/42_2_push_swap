@@ -12,14 +12,10 @@
 
 #include "../push_swap.h"
 
-void	only_5(t_data *data)
+void	only_2(t_data *data)
 {
-	(void)data;
-}
-
-void	only_4(t_data *data)
-{
-	(void)data;
+	if (data->p_a->index == 2)
+		rotate_a(data, 1);
 }
 
 void	only_3(t_data *data)
@@ -48,10 +44,29 @@ void	only_3(t_data *data)
 	}
 }
 
-void	only_2(t_data *data)
+void	only_4(t_data *data)
 {
-	if (data->p_a->index == 2)
+	while (data->p_a->index != 4)
 		rotate_a(data, 1);
+	push_b(data, 1);
+	only_3(data);
+	push_a(data, 1);
+	rev_rotate_a(data, 1);
+}
+
+void	only_5(t_data *data)
+{
+	while (data->p_a->index != 5)
+		rotate_a(data, 1);
+	push_b(data, 1);
+	while (data->p_a->index != 4)
+		rotate_a(data, 1);
+	push_b(data, 1);
+	only_3(data);
+	push_a(data, 1);
+	push_a(data, 1);
+	rev_rotate_a(data, 1);
+	rev_rotate_a(data, 1);
 }
 
 void	five_or_less(t_data *data)
