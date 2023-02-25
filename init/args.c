@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/23 16:04:04 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:57:31 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	check_args(int argc, char **argv, t_data *data)
 	int	res;
 
 	if (argc == 1)
-		error(data, 1);
+		free_and_exit(data, 1);
 	if (argc == 2)
 	{
 		res = solo_arg(argv, data);
