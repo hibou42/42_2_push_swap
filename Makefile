@@ -98,6 +98,11 @@ gui :		all
 			@$(GUI)
 			@make fclean
 
+test :		
+			cd Push_Swap_Tester && ./test
+			@cd ..
+			@make fclean
+
 #***** Clean *****#
 
 clean:

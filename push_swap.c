@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:57:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/23 17:31:55 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/25 13:23:39 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ void	test_print(t_data *data)
 		tmp = tmp->next;
 	}
 }
-*/
-
-/*
-https://github.com/tricaducee/Push_Swap_Tester
-git submodule
 */
 
 int	main(int argc, char **argv)
