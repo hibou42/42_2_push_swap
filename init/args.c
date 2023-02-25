@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:03:45 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/25 12:57:31 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/25 13:45:12 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	is_max_int(char *str, int neg)
 {
 	long int	num;
-	int 		i;
+	int			i;
 
 	num = 0;
 	i = neg;
@@ -23,8 +23,8 @@ int	is_max_int(char *str, int neg)
 	{
 		num = num * 10 + (str[i] - '0');
 		if (neg == 0 && num > INT_MAX)
-			return (1); 
-		else if (neg == 1 && -num < INT_MIN)
+			return (1);
+		else if (neg == 1 && - num < INT_MIN)
 			return (1);
 		i++;
 	}
@@ -34,7 +34,7 @@ int	is_max_int(char *str, int neg)
 int	check_str(char *str)
 {
 	int	res;
-	int neg;
+	int	neg;
 	int	i;
 
 	res = 0;
