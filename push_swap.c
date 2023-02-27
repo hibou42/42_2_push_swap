@@ -12,8 +12,7 @@
 
 #include "push_swap.h"
 
-/*
-test_print(&data);
+
 void	test_print(t_data *data)
 {
 	t_c_list	*tmp;
@@ -33,7 +32,7 @@ void	test_print(t_data *data)
 		tmp = tmp->next;
 	}
 }
-*/
+
 
 int	main(int argc, char **argv)
 {
@@ -45,6 +44,7 @@ int	main(int argc, char **argv)
 	check_doublon(&data);
 	init_index(&data);
 	sorting(&data);
+	test_print(&data);
 	free_and_exit(&data, 0);
 	return (0);
 }
