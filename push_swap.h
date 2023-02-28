@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:58:06 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/21 17:18:23 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:17:23 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void		rotate_ab(t_data *data, int print);
 void		rev_rotate_a(t_data *data, int print);
 void		rev_rotate_b(t_data *data, int print);
 void		rev_rotate_ab(t_data *data, int print);
+void		test_print(t_data *data);
 
 #endif

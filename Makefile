@@ -20,6 +20,7 @@ SRC				=		push_swap.c \
 						utils/rotate.c \
 						utils/reverse_rotate.c \
 						utils/free_and_exit.c \
+						utils/test_print.c \
 						sort/sorting.c \
 						sort/five_or_less.c \
 						sort/raddix.c \

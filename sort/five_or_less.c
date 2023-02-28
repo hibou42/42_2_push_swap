@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:03:13 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/02/25 13:24:27 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:12:57 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ void	only_3(t_data *data, int more)
 	}
 	else if (data->p_a->index == (2 + more))
 	{
-		swap_a(data, 1);
-		if (data->p_a->index == (3 + more))
-			rotate_a(data, 1);
+		if (tmp_next->index == (3 + more))
+			rev_rotate_a(data, 1);
+		else
+			swap_a(data, 1);
 	}
 	else
 	{
@@ -82,58 +83,6 @@ void	only_5(t_data *data)
 	only_4(data, 1);
 	push_a(data, 1);
 }
-/* 
-void	only_3(t_data *data)
-{
-	if (data->p_a->index == 1)
-	{
-		push_b(data, 1);
-		if (data->p_a->index == 3)
-			rotate_a(data, 1);
-		push_a(data, 1);
-	}
-	if (data->p_a->index == 2)
-	{
-		swap_a(data, 1);
-		if (data->p_a->index == 3)
-		{
-			rotate_a(data, 1);
-			swap_a(data, 1);
-		}
-	}
-	if (data->p_a->index == 3)
-	{
-		rotate_a(data, 1);
-		if (data->p_a->index == 2)
-			swap_a(data, 1);
-	}
-}
-
-void	only_4(t_data *data)
-{
-	while (data->p_a->index != 4)
-		rotate_a(data, 1);
-	push_b(data, 1);
-	only_3(data);
-	push_a(data, 1);
-	rotate_a(data, 1);
-}
-
-void	only_5(t_data *data)
-{
-	while (data->p_a->index != 4)
-		rotate_a(data, 1);
-	push_b(data, 1);
-	while (data->p_a->index != 5)
-		rotate_a(data, 1);
-	push_b(data, 1);
-	only_3(data, 2);
-	push_a(data, 1);
-	push_a(data, 1);
-	rotate_a(data, 1);
-	rotate_a(data, 1);
-}
-*/
 
 void	five_or_less(t_data *data)
 {
